@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div style="float: left;">
+        <table border ='1'>
+            <tr>
+            <td colspan="4">
+                <input type="text" id="display">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="dap">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="deleter()" id="del" colspan="3">AC</td>
+            <td id="gr">
+                <button onclick="change()">
+                <img id="record" src="data:image/png;base64,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" alt="">
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="add(1)">1</td>
+            <td onclick="add(2)">2</td>
+            <td onclick="add(3)">3</td>
+            <td onclick="add('+')">+</td>
+        </tr>
+        <tr>
+            <td onclick="add(4)">4</td>
+            <td onclick="add(5)">5</td>
+            <td onclick="add(6)">6</td>
+            <td onclick="add('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="add(7)">7</td>
+            <td onclick="add(8)">8</td>
+            <td onclick="add(9)">9</td>
+            <td onclick="add('*')">*</td>   
+        </tr>
+        <tr>
+            <td onclick="0" colspan="2">0</td>
+            <td onclick="egorock()">=</td>
+            <td onclick="add('/')">/</td>
+        </tr>
+    </table>
+</div>
+<div id="gl" style="float: right;">
+
+</div>
+
+</body>
+</html>
