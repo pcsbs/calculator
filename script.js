@@ -20,14 +20,11 @@ function deleter(){
     document.getElementById('display').value = ''
 }
 
-const gu = document.getElementById("gu")
-let gl = document.getElementById("gl")
-gl.style.display === "block"
 function change(){
-    if (gl.style.display === "none") {
-        gl.style.display = "block";
+    if (document.getElementById("gl").style.display === "none") {
+        document.getElementById("gl").style.display  = "block";
     }
     else{
-        gl.style.display = "none";
+        document.getElementById("gl").style.display  = "none";
     };
 }
